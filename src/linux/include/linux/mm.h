@@ -158,7 +158,7 @@ Traditional functions become IPC clients that send messages to this server.
 #ifndef _LINUX_MM_H
 #define _LINUX_MM_H
 
-
+#include <linux/kernel.h>
 
 #define PAGE_SIZE 4096
 
@@ -196,12 +196,6 @@ typedef unsigned int		vm_attribute_t;		/* Atributos de memória */
 #define MSG_MEM_INHERIT		0x0108	/* Definir herança */
 #define MSG_MEM_COPY		0x0109	/* Copiar região (copy-on-write) */
 
-struct mk_msg_header {
-	unsigned int msg_id;		/* ID da mensagem */
-	unsigned int sender_port;	/* Porta do remetente */
-	unsigned int reply_port;	/* Porta para resposta */
-	unsigned int size;		/* Tamanho total */
-};
 
 struct msg_get_free_page {
 	struct mk_msg_header header;
