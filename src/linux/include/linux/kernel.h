@@ -205,7 +205,7 @@ struct msg_tty_write {
 	int count;			/* Tamanho */
 };
 
-struct mk_kernel_state {
+struct mk_kern_kernel_state {
 	/* Portas do sistema */
 	unsigned int bootstrap_port;	/* Porta de bootstrap */
 	unsigned int kernel_port;	/* Porta do kernel */
