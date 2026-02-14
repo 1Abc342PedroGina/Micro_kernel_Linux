@@ -63,7 +63,7 @@
 
 * Basic functions: get_free_page, put_page, free_page.
 
-* [1995/12/ linus]
+* [1991/12/ linus]
 
 */
 
