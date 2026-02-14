@@ -103,7 +103,7 @@
 * now requests to the memory server with capabilities
 * - suser: originally euid verification, now verification
 * of capabilities (CAP_ROOT)
-
+*/
 
 
 #ifndef _LINUX_KERNEL_H
