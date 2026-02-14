@@ -78,14 +78,14 @@
 * [2026/02/11 pedro]
 
 *
-* Revision 2.1 1996/01/15 linux-0.11a
+* Revision 2.1 1991/12 linux-0.11a
 
 * Minor corrections to the call table.
 
 * [1991/12 linus]
 
 *
-* Revision 1.1 1995/07/13 linux-0.11
+* Revision 1.1 1991/12 linux-0.11
 
 * Original version of Linux 0.11.
 
