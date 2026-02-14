@@ -60,7 +60,7 @@
 
 * Contains prototypes of basic kernel functions.
 
-* [11991/12 linus]
+* [1991/12 linus]
 
 *
 
