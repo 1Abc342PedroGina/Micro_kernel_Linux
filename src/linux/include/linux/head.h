@@ -40,7 +40,7 @@
 
 * Original Linux 0.11 header with x86 segment descriptors.
 
-* * [1995/07/13 Linus]
+* * [1991/07/13 Linus]
 
 */
 
