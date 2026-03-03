@@ -25,6 +25,7 @@
 
 #include <linux/kernel.h>
 #include <linux/sched.h>
+#include "blk_drv/blk.h"
 #include <linux/head.h>
 #include <asm/system.h>
 #include <asm/segment.h>
