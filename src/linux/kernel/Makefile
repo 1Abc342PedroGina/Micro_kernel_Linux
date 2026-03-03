@@ -35,7 +35,7 @@ ASFLAGS	+= --defsym MICROKERNEL=1
 
 OBJS  = sched.o system_call.o traps.o asm.o fork.o \
 	panic.o printk.o vsprintf.o sys.o exit.o \
-	signal.o mktime.o who.o
+	signal.o mktime.o who.o ipc.o
 
 kernel.o: $(OBJS)
 	@$(LD) $(LDFLAGS) -o kernel.o $(OBJS)
@@ -90,4 +90,5 @@ vsprintf.s vsprintf.o: vsprintf.c ../include/stdarg.h ../include/string.h
 who.s who.o: who.c ../include/linux/kernel.h ../include/unistd.h 
 ipc.s ipc.o: ipc.c ../include/linux/kernel.h ../include/linux/sched.h \
   ../include/linux/head.h ../include/asm/segment.h ../include/asm/system.h \
-  ../include/errno.h
+  ../include/errno.h   ../include/linux/fdreg.h ../include/linux/mm.h \
+  ../include/asm/io.h 
