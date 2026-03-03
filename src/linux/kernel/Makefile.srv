@@ -1,0 +1,37 @@
+# Makefile.srv
+include ../Makefile.header.user
+
+include ../Makefile.header
+
+LDFLAGS	+= -r
+
+# NOTE!: do not try to add -On to CFLAGS with gcc4.x, which will optimize the
+# memcpy function a lot to let the kernel not work, for fixing this problem,
+# please refer to glibc and rewrite the memcpy in include/string.h, or just not
+# use any -On options with gcc 4.x when compiling it. in fact, we only can not
+# use -On with gcc4.x to compile fork.c, but after that you need to isolate the
+# compling procedure of it, it's not good too. for playing with linux-0.11, we
+# just have fun, have no much concerning about the performance.
+
+CFLAGS	+= -I../include
+
+CPP	+= -I../include
+
+.c.s:
+	@$(CC) $(CFLAGS) \
+	-S -o $*.s $<
+.s.o:
+	@$(AS) -o $*.o $<
+.c.o:
+	@$(CC) $(CFLAGS) \
+	-c -o $*.o $<
+
+OBJS  = server.o
+
+server.s server.o: server.c ./include/linux/sched.h ../include/linux/head.h \
+  ../include/linux/fs.h ../include/sys/types.h ../include/linux/mm.h \
+  ../include/signal.h ../include/linux/kernel.h ../include/asm/segment.h \
+  ../include/linux/fdreg.h ../include/asm/system.h ../include/asm/io.h \
+  ../include/errno.h ../include/string.h ../include/termios.h ../include/unistd.h 
+
+  
