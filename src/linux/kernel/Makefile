@@ -37,9 +37,6 @@ OBJS  = sched.o system_call.o traps.o asm.o fork.o \
 	panic.o printk.o vsprintf.o sys.o exit.o \
 	signal.o mktime.o who.o ipc.o
 
-kernel.o: $(OBJS)
-	@$(LD) $(LDFLAGS) -o kernel.o $(OBJS)
-	@sync
 
 clean:
 	@rm -f core *.o *.a tmp_make keyboard.s
