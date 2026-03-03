@@ -25,6 +25,6 @@ CPP	+= -I../include
 	@$(CC) $(CFLAGS) \
 	-c -o $*.o $<
 
-kernel.o: $(OBJS)
+kernel.o: $(OBJS) $(SRV_OBJS)
 	@$(LD) $(LDFLAGS) -o kernel.o $(OBJS)
 	@sync
